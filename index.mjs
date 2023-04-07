@@ -1,4 +1,4 @@
-import { Command } from './node_modules/commander/index.js';
+import { Command } from 'commander/index.js';
 const program = new Command();
 
 program
