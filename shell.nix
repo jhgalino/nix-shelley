@@ -2,7 +2,7 @@
 
 pkgs.mkShell {
   buildInputs = [
-   pkgs.deno
-   pkgs.yarn
+    pkgs.nodejs
+    pkgs.yarn
   ];
 }
