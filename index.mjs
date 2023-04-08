@@ -1,4 +1,4 @@
-import { Command } from 'commander/index.js';
+import { Command } from 'commander';
 const program = new Command();
 
 program
@@ -9,4 +9,19 @@ program
 program
   .command('init')
   .description('initializes a shell.nix in the working directory')
+  .action()
+
+program
+  .command('query')
+  .description('queries versioned revisions')
+  .action()
+
+program
+  .command('add')
+  .description('add dependency to shell.nix')
+  .action()
+
+program
+  .command('search')
+  .description('searches for packages in the revision specified in shell.nix')
   .action()
