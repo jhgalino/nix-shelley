@@ -4,6 +4,9 @@ import {
   Scraper,
 } from "nodejs-web-scraper";
 
+import * as fs from 'fs';
+import { checkNix } from "./nix.mjs";
+
 async function queryVersions() {
   const config = {
     baseSiteUrl: `https://lazamar.co.uk/nix-versions/`,
@@ -15,7 +18,7 @@ async function queryVersions() {
   const versions = new CollectContent('option');
 
   root.addOperation(versions);
-  
+
   try {
     await scraper.scrape(root);
     return versions.getData();    
@@ -24,4 +27,11 @@ async function queryVersions() {
   }
 }
 
-queryVersions().then(res => console.log(res));
+function initShellNix(version) {
+  try {
+    checkNix();
+  } catch (err) {
+    console.log(err);
+  }
+  
+}
