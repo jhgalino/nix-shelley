@@ -4,5 +4,7 @@ pkgs.mkShell {
   buildInputs = [
     pkgs.nodejs
     pkgs.yarn
+    pkgs.nodePackages.typescript
+    pkgs.nodePackages.typescript-language-server
   ];
 }
